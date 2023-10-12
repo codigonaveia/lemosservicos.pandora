@@ -1,0 +1,11 @@
+.titulo{
+    color: black;
+    margin-top: 3%;
+    font-family: 'Courier New', Courier, monospace;
+}
+.form-usuarios-cadastro{
+    padding: 2%;
+    background-color: silver;
+    
+    height: 50vh;
+}

@@ -1,0 +1,16 @@
+.container-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #6a6a6a;
+    color: white;
+    text-align: center;
+   
+}
+.container-footer p{
+    color: #fff;
+    text-align: center;
+    margin-top: 1%;
+   
+}
