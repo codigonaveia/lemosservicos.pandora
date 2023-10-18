@@ -1,11 +1,23 @@
-.titulo{
-    color: black;
-    margin-top: 3%;
+.container-principal{
+    background-image: linear-gradient( #000,#ae32c2);
+    height: 100vh;
+}
+.estilo{
+    color: #FFF;
     font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding-top:1%;
 }
 .form-usuarios-cadastro{
     padding: 2%;
-    background-color: silver;
-    
+    box-shadow: 2px 2px 50px 2px #000;
+    color: #FFF;
     height: 50vh;
+    border-radius: 5px;
+}
+
+.loading{
+    color: #FFF;
+    font-size: 20px;
+    text-align: center;
 }

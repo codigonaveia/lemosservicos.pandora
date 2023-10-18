@@ -4,10 +4,10 @@ import HeaderHorizontal from "../../Header/HeaderHorizontal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { faUserAlt } from "@fortawesome/free-solid-svg-icons";
-import ImgLogin from "../../../imgs/Login.avif";
+import ImgLogin from "../../../imgs/Login.webp";
 import Titulo from "../../Titulo/Titulo";
 import "./login.css";
-import Config from "../../api/axios/Config";
+import Config from "../../api/axios/Default";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -37,9 +37,12 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await Config.post("Auth/Login", dados);
-      console.log("Dados enviados com sucesso:", response.data);
-       navegatorToHome();
+       await Config.post("Auth/Login", dados).then(
+        navegatorToHome()
+      );
+      // console.log("Dados enviados com sucesso:", response.data);
+      // console.log("Token", response.data.token)
+      
     } catch (error) {
       if (!error.status) {
       }
@@ -57,16 +60,18 @@ const Login = () => {
     <>
       
       <HeaderHorizontal />
-      <Container>
+      <Container fluid className="container-principal">
         <br />
-        <p className="alert alert-secondary">Home/Login</p>
+        <Titulo estilo="estilo" titulo="Tela de acesso" />
+        <hr />
         <Row>
           <Col>
             <img src={ImgLogin} width="100%" alt="Logo" />
           </Col>
           <Col>
+          
+            <Form onSubmit={handleSubmit} className="form-login">
             <Titulo estilo="login" titulo="Login" icon={faUserCircle} />
-            <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="UserName">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
@@ -105,7 +110,7 @@ const Login = () => {
             )}
             </div>
             <div className="d-grid gap-2">
-              <Button variant="primary" size="lg" onClick={navegatorToUsuario}>
+              <Button variant="outline-light" size="lg" onClick={navegatorToUsuario}>
                 Criar contar
               </Button>
             </div>

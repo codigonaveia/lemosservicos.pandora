@@ -1,0 +1,13 @@
+.container-principal{
+    background-image: linear-gradient( #000,#ae32c2);
+    height: 100vh;
+}
+.container h1{
+    text-align: center;
+    color:#fff;
+    padding-top: 5%;
+    
+}
+.container-capa{
+width: 100%;
+}
