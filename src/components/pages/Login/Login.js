@@ -16,6 +16,7 @@ const Login = () => {
     password: "",
   });
 
+ 
   const [mensagem, setMensagem] = useState(null);
 
   const navagater = useNavigate();
@@ -37,9 +38,12 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-       await Config.post("Auth/Login", dados).then(
-        navegatorToHome()
-      );
+       await Config.post("Auth/Login", dados);
+          navegatorToHome();
+       
+       
+       
+      
       // console.log("Dados enviados com sucesso:", response.data);
       // console.log("Token", response.data.token)
       

@@ -1,9 +1,9 @@
 import React from "react";
-import { Navbar, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import Logo from "../Logo/Logo";
 import { useNavigate } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
-const HeaderHorizontal = () => {
+const HeaderHorizontal = ({isAuthenticated}) => {
   const navagater = useNavigate();
   const navegatorToLogin = () => {
     navagater("/Login");
@@ -21,8 +21,26 @@ const HeaderHorizontal = () => {
             <Logo />
           </Navbar.Brand>
         </LinkContainer>
-
+       
         <Navbar.Toggle />
+        <Nav className="me-auto">
+          {!isAuthenticated && (
+            <>
+             <LinkContainer to="/Academia">
+           <Nav.Link>Academia</Nav.Link>
+           </LinkContainer>
+            <LinkContainer to="/Barbearia">
+            <Nav.Link>Barbearia</Nav.Link>
+            </LinkContainer>
+             <LinkContainer to="/Medicina">
+             <Nav.Link>Odontologia</Nav.Link>
+             </LinkContainer>
+            </>
+          
+          )}
+          
+           
+          </Nav>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             <Button variant="outline-warning" onClick={navegatorToLogin}>

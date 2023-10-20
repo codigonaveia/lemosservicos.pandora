@@ -13,7 +13,7 @@
   }
 }
 .container-home{
-  
+  background-image: linear-gradient( #000,#ae32c2);
   min-height: 100vh;
   
 }
